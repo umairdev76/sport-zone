@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athletic Performance Tee - SportZone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/logo.svg" alt="SportZone" height="40">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categories.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="header-contact me-4 d-none d-lg-block">
+                            <small class="text-muted">Call us: +1 (555) 123-4567</small>
+                        </div>
+                        <button class="btn btn-link text-white me-2" onclick="openSearch()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <a href="cart.html" class="btn btn-link text-white position-relative">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">0</span>
+                        </a>
+                        <div class="social-links ms-3 d-none d-lg-flex">
+                            <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="categories.html">Categories</a></li>
+                    <li class="breadcrumb-item"><a href="products.html">Athletic Apparel</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Athletic Performance Tee</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="product-detail py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Product Images -->
+                <div class="col-lg-6 mb-4">
+                    <div class="product-images">
+                        <!-- Main Image with Zoom -->
+                        <div class="main-image-container">
+                            <div class="product-image-zoom" id="mainImage">
+                                <div class="product-placeholder large">
+                                    <i class="fas fa-tshirt"></i>
+                                    <p>Athletic Performance Tee - Main View</p>
+                                </div>
+                                <div class="zoom-lens" id="zoomLens"></div>
+                            </div>
+                            <div class="zoom-result" id="zoomResult"></div>
+                        </div>
+                        
+                        <!-- Thumbnail Images -->
+                        <div class="thumbnail-images mt-3">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="thumbnail-item active" onclick="changeMainImage(0)">
+                                        <div class="product-placeholder small">
+                                            <i class="fas fa-tshirt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="thumbnail-item" onclick="changeMainImage(1)">
+                                        <div class="product-placeholder small">
+                                            <i class="fas fa-tshirt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="thumbnail-item" onclick="changeMainImage(2)">
+                                        <div class="product-placeholder small">
+                                            <i class="fas fa-tshirt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="thumbnail-item" onclick="changeMainImage(3)">
+                                        <div class="product-placeholder small">
+                                            <i class="fas fa-tshirt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Information -->
+                <div class="col-lg-6">
+                    <div class="product-info">
+                        <div class="product-badges mb-2">
+                            <span class="badge bg-danger">Sale</span>
+                            <span class="badge bg-success">In Stock</span>
+                        </div>
+                        
+                        <h1 class="product-title">Athletic Performance Tee</h1>
+                        <p class="product-brand text-muted mb-2">by <strong>Nike</strong></p>
+                        <p class="product-code text-muted">Art No: AT001</p>
+                        
+                        <!-- Rating -->
+                        <div class="product-rating mb-3">
+                            <div class="stars">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="far fa-star text-warning"></i>
+                            </div>
+                            <span class="rating-text">(4.2 out of 5 based on 24 reviews)</span>
+                        </div>
+                        
+                        <!-- Price -->
+                        <div class="product-price mb-4">
+                            <span class="current-price">$24.99</span>
+                            <span class="original-price">$29.99</span>
+                            <span class="discount-percentage">Save 17%</span>
+                        </div>
+                        
+                        <!-- Product Description -->
+                        <div class="product-description mb-4">
+                            <h5>Product Description</h5>
+                            <p>Experience ultimate comfort and performance with our Athletic Performance Tee. Made from premium moisture-wicking fabric, this tee keeps you dry and comfortable during intense workouts. The ergonomic design provides freedom of movement while maintaining a sleek, athletic look.</p>
+                            
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check text-success me-2"></i>Moisture-wicking technology</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Anti-odor treatment</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Flatlock seams for comfort</li>
+                                <li><i class="fas fa-check text-success me-2"></i>UPF 30+ sun protection</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Product Options -->
+                        <div class="product-options mb-4">
+                            <!-- Size Selection -->
+                            <div class="size-selection mb-3">
+                                <h6>Size</h6>
+                                <div class="size-options">
+                                    <input type="radio" class="btn-check" name="size" id="size-xs" value="XS">
+                                    <label class="btn btn-outline-secondary" for="size-xs">XS</label>
+                                    
+                                    <input type="radio" class="btn-check" name="size" id="size-s" value="S">
+                                    <label class="btn btn-outline-secondary" for="size-s">S</label>
+                                    
+                                    <input type="radio" class="btn-check" name="size" id="size-m" value="M" checked>
+                                    <label class="btn btn-outline-secondary" for="size-m">M</label>
+                                    
+                                    <input type="radio" class="btn-check" name="size" id="size-l" value="L">
+                                    <label class="btn btn-outline-secondary" for="size-l">L</label>
+                                    
+                                    <input type="radio" class="btn-check" name="size" id="size-xl" value="XL">
+                                    <label class="btn btn-outline-secondary" for="size-xl">XL</label>
+                                </div>
+                                <small class="text-muted">
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">Size Guide</a>
+                                </small>
+                            </div>
+                            
+                            <!-- Color Selection -->
+                            <div class="color-selection mb-3">
+                                <h6>Color</h6>
+                                <div class="color-options">
+                                    <input type="radio" class="btn-check" name="color" id="color-black" value="Black" checked>
+                                    <label class="btn color-btn" for="color-black" style="background-color: #000000;"></label>
+                                    
+                                    <input type="radio" class="btn-check" name="color" id="color-white" value="White">
+                                    <label class="btn color-btn" for="color-white" style="background-color: #ffffff; border: 1px solid #ddd;"></label>
+                                    
+                                    <input type="radio" class="btn-check" name="color" id="color-blue" value="Blue">
+                                    <label class="btn color-btn" for="color-blue" style="background-color: #007bff;"></label>
+                                    
+                                    <input type="radio" class="btn-check" name="color" id="color-red" value="Red">
+                                    <label class="btn color-btn" for="color-red" style="background-color: #dc3545;"></label>
+                                </div>
+                            </div>
+                            
+                            <!-- Quantity -->
+                            <div class="quantity-selection mb-3">
+                                <h6>Quantity</h6>
+                                <div class="quantity-controls">
+                                    <button type="button" class="btn btn-outline-secondary" onclick="changeQuantity(-1)">-</button>
+                                    <input type="number" class="form-control" id="quantity" value="1" min="1" max="10">
+                                    <button type="button" class="btn btn-outline-secondary" onclick="changeQuantity(1)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="product-actions mb-4">
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+                                    <button class="btn btn-primary w-100 btn-lg" onclick="addToCart()">
+                                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                    </button>
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <button class="btn btn-outline-primary w-100 btn-lg" onclick="addToWishlist()">
+                                        <i class="far fa-heart me-2"></i>Add to Wishlist
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn btn-success w-100 btn-lg" onclick="buyNow()">
+                                <i class="fas fa-bolt me-2"></i>Buy Now
+                            </button>
+                        </div>
+                        
+                        <!-- Additional Info -->
+                        <div class="additional-info">
+                            <div class="info-item">
+                                <i class="fas fa-truck me-2 text-primary"></i>
+                                <span>Free shipping on orders over $50</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-undo me-2 text-primary"></i>
+                                <span>30-day return policy</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-shield-alt me-2 text-primary"></i>
+                                <span>2-year warranty included</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Tabs -->
+    <section class="product-tabs py-5 bg-light">
+        <div class="container">
+            <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">Description</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="specifications-tab" data-bs-toggle="tab" data-bs-target="#specifications" type="button" role="tab">Specifications</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">Reviews (24)</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab">Shipping</button>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="productTabsContent">
+                <div class="tab-pane fade show active" id="description" role="tabpanel">
+                    <div class="tab-content-wrapper">
+                        <h4>Product Description</h4>
+                        <p>The Athletic Performance Tee is engineered for athletes who demand the best. This premium tee combines cutting-edge fabric technology with superior design to deliver unmatched performance and comfort.</p>
+                        
+                        <h5>Key Features:</h5>
+                        <ul>
+                            <li><strong>Advanced Moisture Management:</strong> Our proprietary Dri-FIT technology wicks sweat away from your skin to keep you dry and comfortable.</li>
+                            <li><strong>Anti-Odor Technology:</strong> Built-in anti-microbial treatment prevents odor-causing bacteria from growing.</li>
+                            <li><strong>Seamless Design:</strong> Flatlock seams eliminate chafing and provide a smooth, comfortable fit.</li>
+                            <li><strong>UV Protection:</strong> UPF 30+ rating protects your skin from harmful UV rays during outdoor activities.</li>
+                            <li><strong>Sustainable Materials:</strong> Made from recycled polyester to reduce environmental impact.</li>
+                        </ul>
+                        
+                        <h5>Care Instructions:</h5>
+                        <ul>
+                            <li>Machine wash cold with like colors</li>
+                            <li>Do not bleach</li>
+                            <li>Tumble dry low</li>
+                            <li>Do not iron</li>
+                            <li>Do not dry clean</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="specifications" role="tabpanel">
+                    <div class="tab-content-wrapper">
+                        <h4>Technical Specifications</h4>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Material</strong></td>
+                                    <td>100% Recycled Polyester</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Weight</strong></td>
+                                    <td>4.5 oz</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Fit</strong></td>
+                                    <td>Athletic Fit</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>UV Protection</strong></td>
+                                    <td>UPF 30+</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Features</strong></td>
+                                    <td>Moisture-wicking, Anti-odor, Flatlock seams</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Care</strong></td>
+                                    <td>Machine washable</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Origin</strong></td>
+                                    <td>Made in Vietnam</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="reviews" role="tabpanel">
+                    <div class="tab-content-wrapper">
+                        <div class="reviews-summary mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-4">
+                                    <div class="overall-rating text-center">
+                                        <div class="rating-score">4.2</div>
+                                        <div class="rating-stars">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="far fa-star text-warning"></i>
+                                        </div>
+                                        <div class="rating-count">Based on 24 reviews</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="rating-breakdown">
+                                        <div class="rating-bar">
+                                            <span>5 stars</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 60%"></div>
+                                            </div>
+                                            <span>60%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>4 stars</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 25%"></div>
+                                            </div>
+                                            <span>25%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>3 stars</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 10%"></div>
+                                            </div>
+                                            <span>10%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>2 stars</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 3%"></div>
+                                            </div>
+                                            <span>3%</span>
+                                        </div>
+                                        <div class="rating-bar">
+                                            <span>1 star</span>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 2%"></div>
+                                            </div>
+                                            <span>2%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <strong>John D.</strong>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">March 15, 2024</span>
+                                </div>
+                                <div class="review-content">
+                                    <p>Excellent quality tee! The moisture-wicking technology really works. I've been using it for my morning runs and it keeps me dry and comfortable. Highly recommend!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <strong>Sarah M.</strong>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="far fa-star text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">March 10, 2024</span>
+                                </div>
+                                <div class="review-content">
+                                    <p>Great fit and comfortable material. The anti-odor feature is a game-changer for gym sessions. Only minor complaint is that it runs slightly small.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-outline-primary">Write a Review</button>
+                    </div>
+                </div>
+                
+                <div class="tab-pane fade" id="shipping" role="tabpanel">
+                    <div class="tab-content-wrapper">
+                        <h4>Shipping Information</h4>
+                        
+                        <div class="shipping-options">
+                            <div class="shipping-option">
+                                <h5><i class="fas fa-truck me-2"></i>Standard Shipping</h5>
+                                <p><strong>FREE</strong> on orders over $50 | $5.99 for orders under $50</p>
+                                <p>Delivery: 5-7 business days</p>
+                            </div>
+                            
+                            <div class="shipping-option">
+                                <h5><i class="fas fa-shipping-fast me-2"></i>Express Shipping</h5>
+                                <p><strong>$12.99</strong></p>
+                                <p>Delivery: 2-3 business days</p>
+                            </div>
+                            
+                            <div class="shipping-option">
+                                <h5><i class="fas fa-rocket me-2"></i>Overnight Shipping</h5>
+                                <p><strong>$24.99</strong></p>
+                                <p>Delivery: Next business day</p>
+                            </div>
+                        </div>
+                        
+                        <h5>Return Policy</h5>
+                        <p>We offer a 30-day return policy on all items. Items must be in original condition with tags attached. Athletic shoes must show no signs of wear.</p>
+                        
+                        <h5>International Shipping</h5>
+                        <p>We ship to over 50 countries worldwide. International shipping rates and delivery times vary by destination.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="section-title">Related Products</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <i class="fas fa-running"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Running Shorts Pro</h5>
+                            <p class="product-code">Art No: RS102</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$34.99</span>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Training Tank Top</h5>
+                            <p class="product-code">Art No: TT103</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$22.99</span>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <i class="fas fa-shoe-prints"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Athletic Socks</h5>
+                            <p class="product-code">Art No: AS104</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$12.99</span>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <i class="fas fa-tshirt"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Compression Shirt</h5>
+                            <p class="product-code">Art No: CS105</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$39.99</span>
+                                <a href="#" class="btn btn-outline-primary btn-sm">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Modal -->
+    <div class="modal fade" id="sizeGuideModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Size Guide</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest (inches)</th>
+                                <th>Waist (inches)</th>
+                                <th>Length (inches)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XS</td>
+                                <td>32-34</td>
+                                <td>28-30</td>
+                                <td>26</td>
+                            </tr>
+                            <tr>
+                                <td>S</td>
+                                <td>34-36</td>
+                                <td>30-32</td>
+                                <td>27</td>
+                            </tr>
+                            <tr>
+                                <td>M</td>
+                                <td>36-38</td>
+                                <td>32-34</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
+                                <td>38-40</td>
+                                <td>34-36</td>
+                                <td>29</td>
+                            </tr>
+                            <tr>
+                                <td>XL</td>
+                                <td>40-42</td>
+                                <td>36-38</td>
+                                <td>30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>SportZone</h5>
+                    <p>Your premium destination for athletic wear and equipment. Quality gear for champions.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="categories.html" class="text-light text-decoration-none">Categories</a></li>
+                        <li><a href="products.html" class="text-light text-decoration-none">Products</a></li>
+                        <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Shipping</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h6>Contact Info</h6>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>info@sportzone.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Athletic Avenue, Sports City, SC 12345</p>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 SportZone. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button id="goToTop" class="btn btn-primary go-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

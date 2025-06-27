@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - SportZone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/logo.svg" alt="SportZone" height="40">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categories.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="header-contact me-4 d-none d-lg-block">
+                            <small class="text-muted">Call us: +1 (555) 123-4567</small>
+                        </div>
+                        <button class="btn btn-link text-white me-2" onclick="openSearch()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <a href="cart.html" class="btn btn-link text-white position-relative">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">0</span>
+                        </a>
+                        <div class="social-links ms-3 d-none d-lg-flex">
+                            <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Header -->
+    <section class="search-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-form">
+                        <form id="searchForm" class="d-flex">
+                            <input type="text" class="form-control form-control-lg" placeholder="Search for products..." id="mainSearchInput" value="">
+                            <button class="btn btn-primary btn-lg" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="search-results py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Search Filters -->
+                <div class="col-lg-3 mb-4">
+                    <div class="search-filters">
+                        <h5 class="mb-3">Refine Results</h5>
+                        
+                        <!-- Category Filter -->
+                        <div class="filter-group mb-4">
+                            <h6>Category</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-football">
+                                <label class="form-check-label" for="search-football">Football <span class="text-muted">(12)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-basketball">
+                                <label class="form-check-label" for="search-basketball">Basketball <span class="text-muted">(8)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-running">
+                                <label class="form-check-label" for="search-running">Running <span class="text-muted">(15)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-swimming">
+                                <label class="form-check-label" for="search-swimming">Swimming <span class="text-muted">(6)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-fitness">
+                                <label class="form-check-label" for="search-fitness">Gym & Fitness <span class="text-muted">(10)</span></label>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Filter -->
+                        <div class="filter-group mb-4">
+                            <h6>Price Range</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-price1">
+                                <label class="form-check-label" for="search-price1">$0 - $50 <span class="text-muted">(18)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-price2">
+                                <label class="form-check-label" for="search-price2">$50 - $100 <span class="text-muted">(15)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-price3">
+                                <label class="form-check-label" for="search-price3">$100 - $200 <span class="text-muted">(12)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-price4">
+                                <label class="form-check-label" for="search-price4">$200+ <span class="text-muted">(6)</span></label>
+                            </div>
+                        </div>
+                        
+                        <!-- Brand Filter -->
+                        <div class="filter-group mb-4">
+                            <h6>Brand</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-nike">
+                                <label class="form-check-label" for="search-nike">Nike <span class="text-muted">(20)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-adidas">
+                                <label class="form-check-label" for="search-adidas">Adidas <span class="text-muted">(15)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-puma">
+                                <label class="form-check-label" for="search-puma">Puma <span class="text-muted">(8)</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="search-reebok">
+                                <label class="form-check-label" for="search-reebok">Reebok <span class="text-muted">(8)</span></label>
+                            </div>
+                        </div>
+                        
+                        <!-- Rating Filter -->
+                        <div class="filter-group mb-4">
+                            <h6>Customer Rating</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rating-4">
+                                <label class="form-check-label" for="rating-4">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    & Up <span class="text-muted">(25)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rating-3">
+                                <label class="form-check-label" for="rating-3">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    & Up <span class="text-muted">(35)</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary w-100">Apply Filters</button>
+                        <button class="btn btn-outline-secondary w-100 mt-2">Clear All</button>
+                    </div>
+                </div>
+                
+                <!-- Search Results -->
+                <div class="col-lg-9">
+                    <!-- Results Header -->
+                    <div class="results-header mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h4 id="searchResultsTitle">Search Results</h4>
+                                <p class="text-muted mb-0" id="searchResultsCount">Showing 1-12 of 51 results</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center justify-content-md-end">
+                                    <label for="searchSortSelect" class="form-label me-2 mb-0">Sort by:</label>
+                                    <select class="form-select" id="searchSortSelect" style="width: auto;">
+                                        <option selected>Relevance</option>
+                                        <option value="price-low">Price: Low to High</option>
+                                        <option value="price-high">Price: High to Low</option>
+                                        <option value="name">Name</option>
+                                        <option value="rating">Customer Rating</option>
+                                        <option value="newest">Newest</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Grid -->
+                    <div class="results-grid" id="searchResultsGrid">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <div class="product-placeholder">
+                                            <i class="fas fa-tshirt"></i>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary btn-sm">Quick View</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h5 class="product-name">Athletic Performance Tee</h5>
+                                        <p class="product-brand text-muted">Nike</p>
+                                        <p class="product-code">Art No: AT001</p>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="far fa-star text-warning"></i>
+                                            <span class="text-muted">(24)</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="product-price">$24.99</span>
+                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <div class="product-placeholder">
+                                            <i class="fas fa-running"></i>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary btn-sm">Quick View</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h5 class="product-name">Running Shoes Pro</h5>
+                                        <p class="product-brand text-muted">Adidas</p>
+                                        <p class="product-code">Art No: RS101</p>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <span class="text-muted">(18)</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="product-price">$149.99</span>
+                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <div class="product-placeholder">
+                                            <i class="fas fa-dumbbell"></i>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary btn-sm">Quick View</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h5 class="product-name">Training Equipment Set</h5>
+                                        <p class="product-brand text-muted">Reebok</p>
+                                        <p class="product-code">Art No: TE201</p>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="far fa-star text-warning"></i>
+                                            <span class="text-muted">(12)</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="product-price">$299.99</span>
+                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <div class="product-placeholder">
+                                            <i class="fas fa-swimmer"></i>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary btn-sm">Quick View</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h5 class="product-name">Swim Performance Gear</h5>
+                                        <p class="product-brand text-muted">Speedo</p>
+                                        <p class="product-code">Art No: SW301</p>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <span class="text-muted">(31)</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="product-price">$89.99</span>
+                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <div class="product-placeholder">
+                                            <i class="fas fa-basketball-ball"></i>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary btn-sm">Quick View</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h5 class="product-name">Basketball Shoes Elite</h5>
+                                        <p class="product-brand text-muted">Jordan</p>
+                                        <p class="product-code">Art No: BS401</p>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="far fa-star text-warning"></i>
+                                            <span class="text-muted">(9)</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="product-price">$189.99</span>
+                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <div class="product-placeholder">
+                                            <i class="fas fa-futbol"></i>
+                                        </div>
+                                        <div class="product-overlay">
+                                            <button class="btn btn-primary btn-sm">Quick View</button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h5 class="product-name">Football Cleats Pro</h5>
+                                        <p class="product-brand text-muted">Nike</p>
+                                        <p class="product-code">Art No: FC501</p>
+                                        <div class="product-rating mb-2">
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <i class="fas fa-star text-warning"></i>
+                                            <span class="text-muted">(45)</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="product-price">$199.99</span>
+                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- No Results State -->
+                    <div class="no-results d-none" id="noResultsState">
+                        <div class="text-center py-5">
+                            <div class="no-results-icon mb-4">
+                                <i class="fas fa-search fa-5x text-muted"></i>
+                            </div>
+                            <h3>No results found</h3>
+                            <p class="text-muted mb-4">We couldn't find any products matching your search criteria. Try adjusting your filters or search terms.</p>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="suggestions">
+                                        <h5>Suggestions:</h5>
+                                        <ul class="list-unstyled">
+                                            <li>• Check your spelling</li>
+                                            <li>• Try more general keywords</li>
+                                            <li>• Remove some filters</li>
+                                            <li>• Browse our categories instead</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="categories.html" class="btn btn-primary">Browse Categories</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav aria-label="Search results pagination" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">5</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Searches -->
+    <section class="popular-searches py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="mb-3">Popular Searches</h4>
+                    <div class="popular-search-tags">
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2 mb-2">running shoes</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2 mb-2">nike</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2 mb-2">basketball</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2 mb-2">training</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2 mb-2">fitness equipment</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2 mb-2">athletic wear</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2 mb-2">football</a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm me-2 mb-2">swimming</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>SportZone</h5>
+                    <p>Your premium destination for athletic wear and equipment. Quality gear for champions.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="categories.html" class="text-light text-decoration-none">Categories</a></li>
+                        <li><a href="products.html" class="text-light text-decoration-none">Products</a></li>
+                        <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Shipping</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h6>Contact Info</h6>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>info@sportzone.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Athletic Avenue, Sports City, SC 12345</p>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 SportZone. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button id="goToTop" class="btn btn-primary go-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

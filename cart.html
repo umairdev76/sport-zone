@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - SportZone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/logo.svg" alt="SportZone" height="40">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categories.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="header-contact me-4 d-none d-lg-block">
+                            <small class="text-muted">Call us: +1 (555) 123-4567</small>
+                        </div>
+                        <button class="btn btn-link text-white me-2" onclick="openSearch()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <a href="cart.html" class="btn btn-link text-white position-relative">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">2</span>
+                        </a>
+                        <div class="social-links ms-3 d-none d-lg-flex">
+                            <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 fw-bold text-white">Shopping Cart</h1>
+                    <p class="lead text-white">Review your items before checkout</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart -->
+    <section class="shopping-cart py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="cart-items">
+                        <div class="cart-header">
+                            <h3>Your Cart (2 items)</h3>
+                        </div>
+                        
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <div class="item-image">
+                                        <div class="product-placeholder small">
+                                            <i class="fas fa-tshirt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="item-details">
+                                        <h5 class="item-name">Athletic Performance Tee</h5>
+                                        <p class="item-brand text-muted">Nike</p>
+                                        <p class="item-specs">Size: M | Color: Black</p>
+                                        <p class="item-code">Art No: AT001</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="item-price">
+                                        <span class="current-price">$24.99</span>
+                                        <span class="original-price">$29.99</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="quantity-controls">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(1, -1)">-</button>
+                                        <span class="quantity-display">1</span>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(1, 1)">+</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="item-total">
+                                        <strong>$24.99</strong>
+                                        <button type="button" class="btn btn-link text-danger p-0 ms-2" onclick="removeItem(1)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cart Item 2 -->
+                        <div class="cart-item">
+                            <div class="row align-items-center">
+                                <div class="col-md-2">
+                                    <div class="item-image">
+                                        <div class="product-placeholder small">
+                                            <i class="fas fa-running"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="item-details">
+                                        <h5 class="item-name">Running Shoes Pro</h5>
+                                        <p class="item-brand text-muted">Adidas</p>
+                                        <p class="item-specs">Size: 10 | Color: Blue</p>
+                                        <p class="item-code">Art No: RS101</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="item-price">
+                                        <span class="current-price">$149.99</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="quantity-controls">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(2, -1)">-</button>
+                                        <span class="quantity-display">1</span>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(2, 1)">+</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="item-total">
+                                        <strong>$149.99</strong>
+                                        <button type="button" class="btn btn-link text-danger p-0 ms-2" onclick="removeItem(2)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cart Actions -->
+                        <div class="cart-actions">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="products.html" class="btn btn-outline-primary">
+                                        <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                                    </a>
+                                </div>
+                                <div class="col-md-6 text-md-end">
+                                    <button type="button" class="btn btn-outline-danger" onclick="clearCart()">
+                                        <i class="fas fa-trash me-2"></i>Clear Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cart Summary -->
+                <div class="col-lg-4">
+                    <div class="cart-summary">
+                        <h4>Order Summary</h4>
+                        
+                        <div class="summary-item">
+                            <span>Subtotal (2 items):</span>
+                            <span>$174.98</span>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <span>Discount:</span>
+                            <span class="text-success">-$5.00</span>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <span>Shipping:</span>
+                            <span class="text-success">FREE</span>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <span>Tax:</span>
+                            <span>$13.60</span>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="summary-total">
+                            <span><strong>Total:</strong></span>
+                            <span><strong>$183.58</strong></span>
+                        </div>
+                        
+                        <!-- Promo Code -->
+                        <div class="promo-code">
+                            <h6>Promo Code</h6>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter promo code" id="promoCode">
+                                <button class="btn btn-outline-secondary" type="button" onclick="applyPromoCode()">Apply</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Checkout Button -->
+                        <button type="button" class="btn btn-primary w-100 btn-lg" onclick="proceedToCheckout()">
+                            <i class="fas fa-lock me-2"></i>Proceed to Checkout
+                        </button>
+                        
+                        <!-- Payment Methods -->
+                        <div class="payment-methods">
+                            <h6>We Accept:</h6>
+                            <div class="payment-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                                <i class="fab fa-cc-paypal"></i>
+                                <i class="fab fa-apple-pay"></i>
+                                <i class="fab fa-google-pay"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Security Info -->
+                        <div class="security-info">
+                            <div class="security-item">
+                                <i class="fas fa-shield-alt text-success me-2"></i>
+                                <span>Secure Checkout</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-truck text-success me-2"></i>
+                                <span>Free Shipping over $50</span>
+                            </div>
+                            <div class="security-item">
+                                <i class="fas fa-undo text-success me-2"></i>
+                                <span>30-day Returns</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Viewed -->
+    <section class="recently-viewed py-5 bg-light">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h3>Recently Viewed</h3>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Training Equipment Set</h5>
+                            <p class="product-code">Art No: TE201</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$299.99</span>
+                                <button class="btn btn-outline-primary btn-sm" onclick="addToCartFromRecentlyViewed('TE201')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <i class="fas fa-swimmer"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Swim Performance Gear</h5>
+                            <p class="product-code">Art No: SW301</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$89.99</span>
+                                <button class="btn btn-outline-primary btn-sm" onclick="addToCartFromRecentlyViewed('SW301')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <i class="fas fa-basketball-ball"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Basketball Shoes Elite</h5>
+                            <p class="product-code">Art No: BS401</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$189.99</span>
+                                <button class="btn btn-outline-primary btn-sm" onclick="addToCartFromRecentlyViewed('BS401')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="product-placeholder">
+                                <i class="fas fa-futbol"></i>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">Football Cleats Pro</h5>
+                            <p class="product-code">Art No: FC501</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="product-price">$199.99</span>
+                                <button class="btn btn-outline-primary btn-sm" onclick="addToCartFromRecentlyViewed('FC501')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empty Cart State (Hidden by default) -->
+    <section class="empty-cart py-5 d-none" id="emptyCartState">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="empty-cart-icon mb-4">
+                        <i class="fas fa-shopping-cart fa-5x text-muted"></i>
+                    </div>
+                    <h3>Your cart is empty</h3>
+                    <p class="text-muted mb-4">Looks like you haven't added any items to your cart yet. Start shopping to fill it up!</p>
+                    <a href="products.html" class="btn btn-primary btn-lg">
+                        <i class="fas fa-shopping-bag me-2"></i>Start Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>SportZone</h5>
+                    <p>Your premium destination for athletic wear and equipment. Quality gear for champions.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="categories.html" class="text-light text-decoration-none">Categories</a></li>
+                        <li><a href="products.html" class="text-light text-decoration-none">Products</a></li>
+                        <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Shipping</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h6>Contact Info</h6>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>info@sportzone.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Athletic Avenue, Sports City, SC 12345</p>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 SportZone. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button id="goToTop" class="btn btn-primary go-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search Products</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Search for products..." id="searchInput">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportZone - Premium Sports Wear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/logo.svg" alt="SportZone" height="40">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="categories.html">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="d-flex align-items-center">
+                        <div class="header-contact me-4 d-none d-lg-block">
+                            <small class="text-muted">Call us: +1 (555) 123-4567</small>
+                        </div>
+                        <button class="btn btn-link text-white me-2" onclick="openSearch()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <a href="cart.html" class="btn btn-link text-white position-relative">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">0</span>
+                        </a>
+                        <div class="social-links ms-3 d-none d-lg-flex">
+                            <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="hero-slide hero-slide-1">
+                        <div class="hero-overlay"></div>
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="hero-content text-white">
+                                        <h1 class="display-4 fw-bold mb-4">Premium Sports Wear Collection</h1>
+                                        <p class="lead mb-4">Discover the latest in athletic performance and style. Gear up for greatness with our premium sports collection.</p>
+                                        <a href="products.html" class="btn btn-primary btn-lg">Shop Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="hero-slide hero-slide-2">
+                        <div class="hero-overlay"></div>
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="hero-content text-white">
+                                        <h1 class="display-4 fw-bold mb-4">Athletic Excellence</h1>
+                                        <p class="lead mb-4">Professional grade equipment and apparel for champions. Elevate your performance to the next level.</p>
+                                        <a href="categories.html" class="btn btn-primary btn-lg">Explore Categories</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="hero-slide hero-slide-3">
+                        <div class="hero-overlay"></div>
+                        <div class="container h-100">
+                            <div class="row h-100 align-items-center">
+                                <div class="col-lg-6">
+                                    <div class="hero-content text-white">
+                                        <h1 class="display-4 fw-bold mb-4">Train Like a Pro</h1>
+                                        <p class="lead mb-4">From beginner to professional, find the perfect gear for your athletic journey.</p>
+                                        <a href="about.html" class="btn btn-primary btn-lg">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Featured Products</h2>
+                    <p class="section-subtitle">Discover our most popular athletic gear</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="product-card">
+                                            <div class="product-image">
+                                                <div class="product-placeholder">
+                                                    <i class="fas fa-tshirt"></i>
+                                                </div>
+                                                <div class="product-overlay">
+                                                    <button class="btn btn-primary btn-sm">Quick View</button>
+                                                </div>
+                                            </div>
+                                            <div class="product-info">
+                                                <h5 class="product-name">Athletic Performance Tee</h5>
+                                                <p class="product-code">Art No: AT001</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="product-price">$29.99</span>
+                                                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="product-card">
+                                            <div class="product-image">
+                                                <div class="product-placeholder">
+                                                    <i class="fas fa-running"></i>
+                                                </div>
+                                                <div class="product-overlay">
+                                                    <button class="btn btn-primary btn-sm">Quick View</button>
+                                                </div>
+                                            </div>
+                                            <div class="product-info">
+                                                <h5 class="product-name">Running Shoes Pro</h5>
+                                                <p class="product-code">Art No: RS101</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="product-price">$149.99</span>
+                                                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="product-card">
+                                            <div class="product-image">
+                                                <div class="product-placeholder">
+                                                    <i class="fas fa-dumbbell"></i>
+                                                </div>
+                                                <div class="product-overlay">
+                                                    <button class="btn btn-primary btn-sm">Quick View</button>
+                                                </div>
+                                            </div>
+                                            <div class="product-info">
+                                                <h5 class="product-name">Training Equipment Set</h5>
+                                                <p class="product-code">Art No: TE201</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="product-price">$299.99</span>
+                                                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-lg-3 col-md-6 mb-4">
+                                        <div class="product-card">
+                                            <div class="product-image">
+                                                <div class="product-placeholder">
+                                                    <i class="fas fa-swimmer"></i>
+                                                </div>
+                                                <div class="product-overlay">
+                                                    <button class="btn btn-primary btn-sm">Quick View</button>
+                                                </div>
+                                            </div>
+                                            <div class="product-info">
+                                                <h5 class="product-name">Swim Performance Gear</h5>
+                                                <p class="product-code">Art No: SW301</p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="product-price">$89.99</span>
+                                                    <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Shop by Category</h2>
+                    <p class="section-subtitle">Find the perfect gear for your sport</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <div class="category-placeholder">
+                                <i class="fas fa-futbol"></i>
+                            </div>
+                            <div class="category-overlay">
+                                <a href="categories.html" class="btn btn-primary">Explore</a>
+                            </div>
+                        </div>
+                        <div class="category-info">
+                            <h5>Football</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <div class="category-placeholder">
+                                <i class="fas fa-basketball-ball"></i>
+                            </div>
+                            <div class="category-overlay">
+                                <a href="categories.html" class="btn btn-primary">Explore</a>
+                            </div>
+                        </div>
+                        <div class="category-info">
+                            <h5>Basketball</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="category-card">
+                        <div class="category-image">
+                            <div class="category-placeholder">
+                                <i class="fas fa-running"></i>
+                            </div>
+                            <div class="category-overlay">
+                                <a href="categories.html" class="btn btn-primary">Explore</a>
+                            </div>
+                        </div>
+                        <div class="category-info">
+                            <h5>Running</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="parallax-section">
+        <div class="parallax-overlay"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center text-white">
+                    <h2 class="display-5 fw-bold mb-4">Unleash Your Athletic Potential</h2>
+                    <p class="lead mb-4">Join thousands of athletes who trust SportZone for their performance needs. Quality gear, unbeatable prices, exceptional service.</p>
+                    <a href="products.html" class="btn btn-primary btn-lg">Start Shopping</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Gallery</h2>
+                    <p class="section-subtitle">See our products in action</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 mb-4">
+                                        <div class="gallery-item">
+                                            <div class="gallery-placeholder">
+                                                <i class="fas fa-camera"></i>
+                                                <p>Action Shot 1</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 mb-4">
+                                        <div class="gallery-item">
+                                            <div class="gallery-placeholder">
+                                                <i class="fas fa-camera"></i>
+                                                <p>Action Shot 2</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 mb-4">
+                                        <div class="gallery-item">
+                                            <div class="gallery-placeholder">
+                                                <i class="fas fa-camera"></i>
+                                                <p>Action Shot 3</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">What Our Customers Say</h2>
+                    <p class="section-subtitle">Real reviews from real athletes</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="testimonial-card text-center">
+                                            <div class="testimonial-avatar mb-3">
+                                                <div class="avatar-placeholder">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                            </div>
+                                            <blockquote class="blockquote">
+                                                <p class="mb-3">"Amazing quality and fast delivery. The running shoes I ordered exceeded my expectations. Highly recommended for serious athletes!"</p>
+                                            </blockquote>
+                                            <footer class="blockquote-footer">
+                                                <strong>Sarah Johnson</strong>
+                                                <cite title="Source Title">Marathon Runner</cite>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="testimonial-card text-center">
+                                            <div class="testimonial-avatar mb-3">
+                                                <div class="avatar-placeholder">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                            </div>
+                                            <blockquote class="blockquote">
+                                                <p class="mb-3">"Best sports gear store online! Great customer service and the products are exactly as described. Will definitely shop here again."</p>
+                                            </blockquote>
+                                            <footer class="blockquote-footer">
+                                                <strong>Mike Thompson</strong>
+                                                <cite title="Source Title">Basketball Player</cite>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>SportZone</h5>
+                    <p>Your premium destination for athletic wear and equipment. Quality gear for champions.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="categories.html" class="text-light text-decoration-none">Categories</a></li>
+                        <li><a href="products.html" class="text-light text-decoration-none">Products</a></li>
+                        <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html" class="text-light text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Shipping</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Returns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h6>Contact Info</h6>
+                    <p class="mb-1"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>info@sportzone.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>123 Athletic Avenue, Sports City, SC 12345</p>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 SportZone. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Go to Top Button -->
+    <button id="goToTop" class="btn btn-primary go-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Search Products</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Search for products..." id="searchInput">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
