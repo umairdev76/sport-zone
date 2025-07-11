@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results - SportZone</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header -->
     <header class="fixed-top">
@@ -17,11 +20,11 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="assets/logo.svg" alt="SportZone" height="40">
                 </a>
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
@@ -40,7 +43,7 @@
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
-                    
+
                     <div class="d-flex align-items-center">
                         <div class="header-contact me-4 d-none d-lg-block">
                             <small class="text-muted">Call us: +1 (555) 123-4567</small>
@@ -50,7 +53,8 @@
                         </button>
                         <a href="cart.html" class="btn btn-link text-white position-relative">
                             <i class="fas fa-shopping-cart"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">0</span>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">0</span>
                         </a>
                         <div class="social-links ms-3 d-none d-lg-flex">
                             <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
@@ -70,7 +74,8 @@
                 <div class="col-12">
                     <div class="search-form">
                         <form id="searchForm" class="d-flex">
-                            <input type="text" class="form-control form-control-lg" placeholder="Search for products..." id="mainSearchInput" value="">
+                            <input type="text" class="form-control form-control-lg" placeholder="Search for products..."
+                                id="mainSearchInput" value="">
                             <button class="btn btn-primary btn-lg" type="submit">
                                 <i class="fas fa-search"></i>
                             </button>
@@ -89,74 +94,87 @@
                 <div class="col-lg-3 mb-4">
                     <div class="search-filters">
                         <h5 class="mb-3">Refine Results</h5>
-                        
+
                         <!-- Category Filter -->
                         <div class="filter-group mb-4">
                             <h6>Category</h6>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-football">
-                                <label class="form-check-label" for="search-football">Football <span class="text-muted">(12)</span></label>
+                                <label class="form-check-label" for="search-football">Football <span
+                                        class="text-muted">(12)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-basketball">
-                                <label class="form-check-label" for="search-basketball">Basketball <span class="text-muted">(8)</span></label>
+                                <label class="form-check-label" for="search-basketball">Basketball <span
+                                        class="text-muted">(8)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-running">
-                                <label class="form-check-label" for="search-running">Running <span class="text-muted">(15)</span></label>
+                                <label class="form-check-label" for="search-running">Running <span
+                                        class="text-muted">(15)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-swimming">
-                                <label class="form-check-label" for="search-swimming">Swimming <span class="text-muted">(6)</span></label>
+                                <label class="form-check-label" for="search-swimming">Swimming <span
+                                        class="text-muted">(6)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-fitness">
-                                <label class="form-check-label" for="search-fitness">Gym & Fitness <span class="text-muted">(10)</span></label>
+                                <label class="form-check-label" for="search-fitness">Gym & Fitness <span
+                                        class="text-muted">(10)</span></label>
                             </div>
                         </div>
-                        
+
                         <!-- Price Filter -->
                         <div class="filter-group mb-4">
                             <h6>Price Range</h6>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-price1">
-                                <label class="form-check-label" for="search-price1">$0 - $50 <span class="text-muted">(18)</span></label>
+                                <label class="form-check-label" for="search-price1">$0 - $50 <span
+                                        class="text-muted">(18)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-price2">
-                                <label class="form-check-label" for="search-price2">$50 - $100 <span class="text-muted">(15)</span></label>
+                                <label class="form-check-label" for="search-price2">$50 - $100 <span
+                                        class="text-muted">(15)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-price3">
-                                <label class="form-check-label" for="search-price3">$100 - $200 <span class="text-muted">(12)</span></label>
+                                <label class="form-check-label" for="search-price3">$100 - $200 <span
+                                        class="text-muted">(12)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-price4">
-                                <label class="form-check-label" for="search-price4">$200+ <span class="text-muted">(6)</span></label>
+                                <label class="form-check-label" for="search-price4">$200+ <span
+                                        class="text-muted">(6)</span></label>
                             </div>
                         </div>
-                        
+
                         <!-- Brand Filter -->
                         <div class="filter-group mb-4">
                             <h6>Brand</h6>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-nike">
-                                <label class="form-check-label" for="search-nike">Nike <span class="text-muted">(20)</span></label>
+                                <label class="form-check-label" for="search-nike">Nike <span
+                                        class="text-muted">(20)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-adidas">
-                                <label class="form-check-label" for="search-adidas">Adidas <span class="text-muted">(15)</span></label>
+                                <label class="form-check-label" for="search-adidas">Adidas <span
+                                        class="text-muted">(15)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-puma">
-                                <label class="form-check-label" for="search-puma">Puma <span class="text-muted">(8)</span></label>
+                                <label class="form-check-label" for="search-puma">Puma <span
+                                        class="text-muted">(8)</span></label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="search-reebok">
-                                <label class="form-check-label" for="search-reebok">Reebok <span class="text-muted">(8)</span></label>
+                                <label class="form-check-label" for="search-reebok">Reebok <span
+                                        class="text-muted">(8)</span></label>
                             </div>
                         </div>
-                        
+
                         <!-- Rating Filter -->
                         <div class="filter-group mb-4">
                             <h6>Customer Rating</h6>
@@ -183,12 +201,12 @@
                                 </label>
                             </div>
                         </div>
-                        
+
                         <button class="btn btn-primary w-100">Apply Filters</button>
                         <button class="btn btn-outline-secondary w-100 mt-2">Clear All</button>
                     </div>
                 </div>
-                
+
                 <!-- Search Results -->
                 <div class="col-lg-9">
                     <!-- Results Header -->
@@ -213,7 +231,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Results Grid -->
                     <div class="results-grid" id="searchResultsGrid">
                         <div class="row">
@@ -241,12 +259,13 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="product-price">$24.99</span>
-                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                            <a href="product-detail.html"
+                                                class="btn btn-outline-primary btn-sm">Details</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -271,12 +290,13 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="product-price">$149.99</span>
-                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                            <a href="product-detail.html"
+                                                class="btn btn-outline-primary btn-sm">Details</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -301,12 +321,13 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="product-price">$299.99</span>
-                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                            <a href="product-detail.html"
+                                                class="btn btn-outline-primary btn-sm">Details</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -331,12 +352,13 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="product-price">$89.99</span>
-                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                            <a href="product-detail.html"
+                                                class="btn btn-outline-primary btn-sm">Details</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -361,12 +383,13 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="product-price">$189.99</span>
-                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                            <a href="product-detail.html"
+                                                class="btn btn-outline-primary btn-sm">Details</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -391,14 +414,15 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <span class="product-price">$199.99</span>
-                                            <a href="product-detail.html" class="btn btn-outline-primary btn-sm">Details</a>
+                                            <a href="product-detail.html"
+                                                class="btn btn-outline-primary btn-sm">Details</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- No Results State -->
                     <div class="no-results d-none" id="noResultsState">
                         <div class="text-center py-5">
@@ -406,7 +430,8 @@
                                 <i class="fas fa-search fa-5x text-muted"></i>
                             </div>
                             <h3>No results found</h3>
-                            <p class="text-muted mb-4">We couldn't find any products matching your search criteria. Try adjusting your filters or search terms.</p>
+                            <p class="text-muted mb-4">We couldn't find any products matching your search criteria. Try
+                                adjusting your filters or search terms.</p>
                             <div class="row justify-content-center">
                                 <div class="col-lg-6">
                                     <div class="suggestions">
@@ -423,7 +448,7 @@
                             <a href="categories.html" class="btn btn-primary">Browse Categories</a>
                         </div>
                     </div>
-                    
+
                     <!-- Pagination -->
                     <nav aria-label="Search results pagination" class="mt-5">
                         <ul class="pagination justify-content-center">
@@ -490,7 +515,7 @@
                         <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-6 mb-4">
                     <h6>Quick Links</h6>
                     <ul class="list-unstyled">
@@ -500,7 +525,7 @@
                         <li><a href="about.html" class="text-light text-decoration-none">About</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-6 mb-4">
                     <h6>Support</h6>
                     <ul class="list-unstyled">
@@ -510,7 +535,7 @@
                         <li><a href="#" class="text-light text-decoration-none">Returns</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="col-lg-4 mb-4">
                     <h6>Contact Info</h6>
                     <p class="mb-1"><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
@@ -518,7 +543,7 @@
                     <p><i class="fas fa-map-marker-alt me-2"></i>123 Athletic Avenue, Sports City, SC 12345</p>
                 </div>
             </div>
-            
+
             <hr class="my-4">
             <div class="row align-items-center">
                 <div class="col-md-6">
@@ -540,4 +565,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
